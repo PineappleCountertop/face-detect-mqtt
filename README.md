@@ -69,6 +69,8 @@ docker run \
   --device /dev/video0 \
   -e MQTT_ADDRESS="10.1.1.100" \
   -e MQTT_PORT="1883" \
+  -e MQTT_USERNAME="username" \
+  -e MQTT_PASSWORD="password" \
   -e MQTT_CLIENT_ID="cvzone_tracker_01" \
   -e MIN_FACE_SCORE="0.5" \
   -e ROTATE_IMAGE="0" \
@@ -79,6 +81,8 @@ docker run \
 ### Environment Variables
  - `MQTT_ADDRESS` - IP Address of MQTT broker on local network
  - `MQTT_PORT` - Port of MQTT broker on local network
+ - `MQTT_USERNAME` - Username for MQTT Authorization
+ - `MQTT_PASSWORD` - Password for MQTT Authorization
  - `MQTT_CLIENT_ID` - Custom MQTT client ID to use
  - `MIN_FACE_SCORE` - Number between 0.0 and 0.1. Ignore face detections with a confidence lower than this number. 
  - `ROTATE_IMAGE` - Set to "1" to if your camera is upside-down

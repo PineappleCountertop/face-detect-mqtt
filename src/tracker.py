@@ -11,6 +11,8 @@ class Tracker(object):
             self,
             mqtt_address="",
             mqtt_port=1883,
+            mqtt_username="",
+            mqtt_passwd="",
             mqtt_client_id="",
             min_face_score=0.5,
             rotate_img=False,
@@ -29,6 +31,7 @@ class Tracker(object):
         self.mqtt_client_id = mqtt_client_id
         self.is_mqtt_connected = False
         self.mqtt_client = mqtt.Client(mqtt_client_id)
+        self.mqtt_client.username_pw_set(username=mqtt_username, password=mqtt_passwd)
         self.mqtt_connect()
 
     def mqtt_connect(self):
